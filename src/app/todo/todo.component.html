@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="left">
+    <img src="" />
+    <div class="main">
+      <form class="form" [formGroup]="todo" (submit)="onSubmit(todo.value)">
+        <h2>Add To Do</h2>
+        <div class="form-group">
+          <input type="text" formControlName="title" placeholder="Title" />
+        </div>
+        <div class="form-group">
+          <input type="text" formControlName="desc" placeholder="Add todo" />
+        </div>
+        <button class="submit" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div class="right">
+    <div class="content">
+      <div class="card" *ngFor="let card of cards">
+        <div class="parent">
+          <h2 (click)="deleteTodo(card.id)">X</h2>
+          <div class="child" (click)="getTodo(card.id)">
+            <h3>{{card.title}}</h3>
+            <span>{{card.desc}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

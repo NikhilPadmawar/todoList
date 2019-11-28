@@ -1,0 +1,93 @@
+ .container {
+    display: grid;
+    min-height: 100%;
+    grid-template-columns: repeat(12,1fr);
+  }
+
+  .left {
+    background-color: lightgray;
+    grid-column: 1/5;
+  }
+
+  .right{
+    background-color: lightblue;
+    grid-column:5/-1;
+  }
+
+  @media only screen and (max-width:600px){
+
+  .container {
+      display: grid;
+      min-height: 100%;
+      grid-template-rows: 250px 1fr;
+    }
+  .left {
+    grid-column: 1/-1;
+  }
+
+  .right{
+    grid-column:1/-1;
+  }
+  }
+
+  .content {
+    padding: 10px;
+    height: 750px;
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(200px, 1fr) );
+    grid-auto-rows: 200px;
+    grid-gap: 20px;
+    overflow: auto;
+  }
+
+  .card{
+      background-color: khaki;
+      box-shadow: 
+      inset 0 -3em 3em rgba(255, 237, 137, 0.1), 
+            0.3em 0.3em 1em rgba(0,0,0,0.3);
+  }
+
+  .parent{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+  }
+
+  .child{
+    grid-column: 2/-1;
+  }
+
+  .card h2{
+    cursor: pointer;
+    grid-column: 11/-1;
+    color: dimgray;
+  }
+
+  .main{
+      background-color: lightcoral;
+      padding: 10px;
+      margin: auto 2rem;
+      align-self: center;
+  }
+
+  .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input{
+    background: transparent;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #45494C;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+
+  button {
+    background: deepskyblue;
+    padding: 10px 10px;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+  }
